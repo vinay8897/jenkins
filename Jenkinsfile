@@ -17,12 +17,12 @@ pipeline {
 
     stage('Docker Build and Push') {
             steps {
-             withDockerRegistery([credentialsId: "dockerhub",url: ""]) {
-              sh 'printenv'
-              sh 'docker build -t vinay8920/numeric-app:""$GIT_COMMIT"" .'
-              sh 'docker push vinay8920/numeric-app:""$GIT_COMMIT""'
+             withDockerRegistery([credentialsId:"dockerhub", url:""]) {
+               sh 'printenv'
+               sh 'docker build -t vinay8920/numeric-app:""$GIT_COMMIT"" .'
+               sh 'docker push vinay8920/numeric-app:""$GIT_COMMIT""'
              }
-          }   
+           }   
         }   
     }
 }
